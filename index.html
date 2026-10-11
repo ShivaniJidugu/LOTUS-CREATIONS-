@@ -1,0 +1,458 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff8f5">
+  <meta name="description" content="Lotus Creations — designer blouses, traditional wear, dresses, party wear and custom embroidery.">
+  <title>Lotus Creations | Embroidery & Designer Wear</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="lotus-background" id="lotusBackground" aria-hidden="true"></div>
+
+  <div class="announcement">
+    ✿ BEAUTIFULLY CRAFTED · THOUGHTFULLY DESIGNED · MADE WITH LOVE ✿
+  </div>
+
+  <header class="header">
+    <a class="brand" href="#home">
+      <span class="brand-icon">❀</span>
+      <span>Lotus <small>CREATIONS</small></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+    <nav class="nav" id="nav">
+      <a href="#home">Home</a>
+      <a href="#collections">Collections</a>
+      <a href="#more-designs">Inspiration</a>
+      <a href="#about">Our Story</a>
+      <a href="#assistant">Design Studio</a>
+      <a class="nav-cta" href="#order">Custom Order ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow"><span></span> THE ART OF EMBROIDERY</span>
+        <h1>Wear your story.<br><em>Stitch by stitch.</em></h1>
+        <p>From intricate blouse embroidery to graceful traditional wear and statement bridal designs, discover outfits that make every occasion special.</p>
+
+        <div class="hero-actions">
+          <a href="#collections" class="btn btn-dark">Explore Collections ↗</a>
+          <a href="#order" class="text-link">Create your own design →</a>
+        </div>
+
+        <div class="hero-note">
+          <span class="note-icon">✿</span>
+          <span>
+            <strong>Your vision, our craftsmanship</strong>
+            <small>Personalised ideas for your special moments</small>
+          </span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image-wrap">
+          <img src="images/bridal.jpeg"
+               alt="Bridal embroidery inspiration"
+               onerror="this.onerror=null;this.src='images/saree embroidery.jpg'">
+          <div class="image-label">
+            <span>THE SIGNATURE COLLECTION</span>
+            <strong>Made to make you feel beautiful.</strong>
+          </div>
+        </div>
+        <div class="floating-stamp">MADE WITH<br>LOVE<br><span>✿</span></div>
+        <span class="decor decor-one">✳</span>
+        <span class="decor decor-two">❀</span>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><span>✿</span> Thoughtful craftsmanship</div>
+      <div><span>✦</span> Personalised designs</div>
+      <div><span>♡</span> Made for your moments</div>
+      <div><span>❋</span> Colourful creativity</div>
+    </section>
+
+    <!-- ORIGINAL COLLECTIONS -->
+    <section class="section collections" id="collections">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">THE COLLECTION</span>
+          <h2>Beautiful details.<br><em>Timeless elegance.</em></h2>
+        </div>
+        <p>Explore embroidery inspiration for your favourite outfits and special occasions.</p>
+      </div>
+
+      <div class="collection-grid">
+        <a class="collection-card card-tall" href="#order" data-design="Blouse">
+          <img src="images/blouse embroidery.jpeg"
+               alt="Blouse embroidery"
+               loading="lazy"
+               onerror="this.onerror=null;this.src='https://wholetex.sgp1.cdn.digitaloceanspaces.com/full/heavy-silk-embroidery-bridal-work-blouse-213.jpg'">
+          <span class="card-number">01 / CLASSIC</span>
+          <div class="card-caption">
+            <span>01</span>
+            <div><h3>Blouse Embroidery</h3><p>Details that make the outfit</p></div>
+            <b>↗</b>
+          </div>
+        </a>
+
+        <a class="collection-card" href="#order" data-design="Saree">
+          <img src="images/saree embroidery.jpg"
+               alt="Saree embroidery"
+               loading="lazy"
+               onerror="this.onerror=null;this.src='https://wholetex.sgp1.cdn.digitaloceanspaces.com/full/heavy-silk-embroidery-bridal-work-blouse-213.jpg'">
+          <div class="card-caption">
+            <span>02</span>
+            <div><h3>Saree Embroidery</h3><p>Grace in every thread</p></div>
+            <b>↗</b>
+          </div>
+        </a>
+
+        <a class="collection-card" href="#order" data-design="Bridal outfit">
+          <img src="images/bridal.jpeg"
+               alt="Bridal embroidery"
+               loading="lazy"
+               onerror="this.onerror=null;this.src='https://wholetex.sgp1.cdn.digitaloceanspaces.com/full/heavy-silk-embroidery-bridal-work-blouse-213.jpg'">
+          <div class="card-caption">
+            <span>03</span>
+            <div><h3>Bridal Collection</h3><p>For your unforgettable day</p></div>
+            <b>↗</b>
+          </div>
+        </a>
+
+        <a class="collection-card" href="#order" data-design="Other custom work">
+          <img src="images/custom.jpeg"
+               alt="Custom embroidery"
+               loading="lazy"
+               onerror="this.onerror=null;this.src='https://i.pinimg.com/236x/ca/f1/dd/caf1ddd7f38a09e413078563bc1cfd12.jpg'">
+          <div class="card-caption">
+            <span>04</span>
+            <div><h3>Custom Creations</h3><p>Your idea, beautifully crafted</p></div>
+            <b>↗</b>
+          </div>
+        </a>
+      </div>
+
+      <p class="gallery-note">Images are inspiration. Final design, availability and pricing can be discussed directly.</p>
+    </section>
+
+    <!-- YOUR FIVE PICTURES -->
+    <section class="section extra-gallery" id="more-designs">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">COLOUR YOUR WORLD</span>
+          <h2>Explore our styles.<br><em>Find your favourite.</em></h2>
+        </div>
+        <p>Traditional elegance, designer blouses, beautiful dresses and custom creations — find inspiration for your next outfit.</p>
+      </div>
+
+      <div class="fashion-grid">
+
+        <!-- 1. TRADITIONAL WEAR -->
+        <article class="fashion-card">
+          <div class="fashion-photo photo-pink">
+            <img
+              src="https://wholetex.sgp1.cdn.digitaloceanspaces.com/full/heavy-silk-embroidery-bridal-work-blouse-213.jpg"
+              alt="Traditional silk embroidery and ethnic wear inspiration"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='images/bridal.jpeg'">
+            <span class="fashion-badge">TIMELESS TRADITION</span>
+          </div>
+          <div class="fashion-info">
+            <span>01 · TRADITIONAL</span>
+            <h3>Traditional Wear</h3>
+            <p>Rich silk textures, intricate embroidery and classic ethnic elegance.</p>
+            <a href="#order" data-order="Saree">Customise this look ↗</a>
+          </div>
+        </article>
+
+        <!-- 2. DESIGNER BLOUSE -->
+        <article class="fashion-card">
+          <div class="fashion-photo photo-purple">
+            <img
+              src="https://lh7-us.googleusercontent.com/pA98squF8HhoDe-eQ5TkUuKO2un48TsErZz52GQg31rssOJZmGzxQ5hPlUE6ulgZBF2Tn_p-M2EGMKVKAKF7IeZfEkhOjf_hE-fDZqxflGTSz9pFwLIQ08bOEo93l0LWPaE0oHBllZ6PSVlK1XEt-yg"
+              alt="Designer blouse inspiration"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://wholetex.sgp1.cdn.digitaloceanspaces.com/full/heavy-silk-embroidery-bridal-work-blouse-213.jpg'">
+            <span class="fashion-badge">DESIGNER EDIT</span>
+          </div>
+          <div class="fashion-info">
+            <span>02 · DESIGNER</span>
+            <h3>Designer Blouses</h3>
+            <p>Statement blouse designs for beautiful saree combinations.</p>
+            <a href="#order" data-order="Blouse">Customise this look ↗</a>
+          </div>
+        </article>
+
+        <!-- 3. DRESSES AND ANARKALIS -->
+        <article class="fashion-card">
+          <div class="fashion-photo photo-gold">
+            <img
+              src="https://content.jdmagicbox.com/v2/comp/visakhapatnam/h7/0891px891.x891.220821171023.j5h7/catalogue/vardhini-creations-madhavadara-visakhapatnam-embroidery-job-works-01i0ridwc5-250.jpg"
+              alt="Dresses and Anarkali design inspiration"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='images/custom.jpeg'">
+            <span class="fashion-badge">GRACEFUL STYLE</span>
+          </div>
+          <div class="fashion-info">
+            <span>03 · DRESSES</span>
+            <h3>Dresses & Anarkalis</h3>
+            <p>Elegant occasion wear with beautiful decorative details.</p>
+            <a href="#order" data-order="Dress">Customise this look ↗</a>
+          </div>
+        </article>
+
+        <!-- 4. PARTY WEAR -->
+        <article class="fashion-card">
+          <div class="fashion-photo photo-green">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWWZbKwOZqgrUNJFkDJmkRgs4dWRVO2akttqZ_6n1b_A&s"
+              alt="Party wear outfit inspiration"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='images/bridal.jpeg'">
+            <span class="fashion-badge">PARTY EDIT</span>
+          </div>
+          <div class="fashion-info">
+            <span>04 · PARTY</span>
+            <h3>Party Wear</h3>
+            <p>Beautiful styles for celebrations, parties and special evenings.</p>
+            <a href="#order" data-order="Dress">Customise this look ↗</a>
+          </div>
+        </article>
+
+        <!-- 5. CUSTOM CREATIONS -->
+        <article class="fashion-card">
+          <div class="fashion-photo photo-coral">
+            <img
+              src="https://i.pinimg.com/236x/ca/f1/dd/caf1ddd7f38a09e413078563bc1cfd12.jpg"
+              alt="Custom embroidery design inspiration"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='images/custom.jpeg'">
+            <span class="fashion-badge">MADE FOR YOU</span>
+          </div>
+          <div class="fashion-info">
+            <span>05 · PERSONALISE</span>
+            <h3>Custom Creations</h3>
+            <p>Your favourite colours, motifs and patterns brought together.</p>
+            <a href="#order" data-order="Other custom work">Create your own ↗</a>
+          </div>
+        </article>
+
+        <!-- 6. EXTRA BRIDAL STYLE USING YOUR LOCAL PHOTO -->
+        <article class="fashion-card">
+          <div class="fashion-photo photo-blue">
+            <img
+              src="images/bridal.jpeg"
+              alt="Bridal outfit inspiration"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://wholetex.sgp1.cdn.digitaloceanspaces.com/full/heavy-silk-embroidery-bridal-work-blouse-213.jpg'">
+            <span class="fashion-badge">BRIDAL COLLECTION</span>
+          </div>
+          <div class="fashion-info">
+            <span>06 · SPECIAL MOMENTS</span>
+            <h3>Bridal Elegance</h3>
+            <p>Find inspiration for your special day and celebration outfits.</p>
+            <a href="#order" data-order="Bridal outfit">Customise this look ↗</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="gallery-bottom">
+        <span>❀</span>
+        <p>Your imagination brings the colour.<br><em>Let's bring your design to life.</em></p>
+        <a class="btn btn-dark" href="#order">Create Your Own ↗</a>
+      </div>
+    </section>
+
+    <section class="quote-band">
+      <span>“</span>
+      <p>Elegance is in the details.<br><em>Beauty is in every stitch.</em></p>
+      <span>✿</span>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section story" id="about">
+      <div class="story-image">
+        <img src="images/custom.jpeg"
+             alt="Embroidery craftsmanship"
+             loading="lazy"
+             onerror="this.onerror=null;this.src='images/bridal.jpeg'">
+        <div class="story-tag">MADE WITH<br><strong>LOVE ♡</strong></div>
+      </div>
+
+      <div class="story-copy">
+        <span class="eyebrow">A LITTLE ABOUT US</span>
+        <h2>Crafting beauty,<br><em>one stitch at a time.</em></h2>
+        <p>At Lotus Creations, we believe the smallest details can make an outfit unforgettable. Our focus is on beautiful embroidery, thoughtful colour combinations and designs that reflect your personal style.</p>
+        <p>Whether you are planning a special occasion or refreshing a favourite outfit, let's bring your idea to life together.</p>
+        <a class="btn btn-outline" href="#order">Let's create something →</a>
+      </div>
+    </section>
+
+    <!-- DESIGN ASSISTANT -->
+    <section class="assistant-section" id="assistant">
+      <div class="assistant-inner">
+        <div class="assistant-copy">
+          <span class="eyebrow">YOUR CREATIVE CORNER</span>
+          <h2>Have an idea?<br><em>Let's design it.</em></h2>
+          <p>Choose your outfit, occasion, colour and preferred style to receive a quick embroidery idea.</p>
+          <div class="assistant-perks">
+            <span>✦ Colour combinations</span>
+            <span>✦ Pattern inspiration</span>
+            <span>✦ Occasion-based ideas</span>
+          </div>
+        </div>
+
+        <form class="idea-box" id="aiForm">
+          <div class="idea-box-title">
+            <span>❀</span>
+            <div><strong>Design Idea Studio</strong><small>A little inspiration just for you</small></div>
+          </div>
+
+          <label for="garment">What are we designing?</label>
+          <select id="garment" required>
+            <option value="blouse">Blouse</option>
+            <option value="saree">Saree</option>
+            <option value="dress">Dress</option>
+            <option value="bridal outfit">Bridal outfit</option>
+          </select>
+
+          <label for="occasion">Occasion</label>
+          <select id="occasion" required>
+            <option value="everyday wear">Everyday wear</option>
+            <option value="festive occasion">Festive occasion</option>
+            <option value="wedding">Wedding</option>
+            <option value="engagement">Engagement</option>
+            <option value="party">Party</option>
+          </select>
+
+          <label for="baseColour">Outfit colour</label>
+          <select id="baseColour" required>
+            <option value="pink">Pink</option>
+            <option value="maroon">Maroon</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="black">Black</option>
+            <option value="cream">Cream</option>
+            <option value="purple">Purple</option>
+            <option value="yellow">Yellow</option>
+          </select>
+
+          <label for="workStyle">Preferred style</label>
+          <select id="workStyle" required>
+            <option value="floral">Floral and delicate</option>
+            <option value="traditional">Traditional motifs</option>
+            <option value="minimal">Minimal and elegant</option>
+            <option value="grand">Grand and detailed</option>
+          </select>
+
+          <button class="btn btn-dark full-btn" type="submit">Create My Design Idea ✨</button>
+          <div class="idea-result" id="aiResult" aria-live="polite" hidden></div>
+          <button class="text-link result-order" id="useIdea" type="button" hidden>Use this idea for my order →</button>
+          <small class="disclaimer">Instant rule-based suggestions; this is not a live AI service.</small>
+        </form>
+      </div>
+    </section>
+
+    <!-- CUSTOM ORDER -->
+    <section class="section order-section" id="order">
+      <div class="order-intro">
+        <span class="eyebrow">MADE JUST FOR YOU</span>
+        <h2>Your idea.<br><em>Our next creation.</em></h2>
+        <p>Share your requirements. WhatsApp will open with your enquiry ready for you to review and send.</p>
+
+        <div class="order-detail"><span>01</span><div><strong>Tell us your idea</strong><small>Choose your garment and style</small></div></div>
+        <div class="order-detail"><span>02</span><div><strong>Discuss the details</strong><small>Colours, patterns and requirements</small></div></div>
+        <div class="order-detail"><span>03</span><div><strong>Confirm your order</strong><small>Discuss price and completion time</small></div></div>
+      </div>
+
+      <form class="order-form" id="orderForm">
+        <h3>Custom order enquiry</h3>
+        <p>Let's start with the basics.</p>
+
+        <div class="form-row">
+          <div>
+            <label for="customerName">Your name *</label>
+            <input id="customerName" name="name" placeholder="Enter your name" required>
+          </div>
+          <div>
+            <label for="customerPhone">Phone number</label>
+            <input id="customerPhone" name="phone" type="tel" placeholder="Your contact number">
+          </div>
+        </div>
+
+        <label for="orderType">Garment type *</label>
+        <select id="orderType" name="type" required>
+          <option value="">Choose your garment</option>
+          <option>Blouse</option>
+          <option>Saree</option>
+          <option>Dress</option>
+          <option>Bridal outfit</option>
+          <option>Other custom work</option>
+        </select>
+
+        <div class="form-row">
+          <div>
+            <label for="orderColour">Outfit colour</label>
+            <input id="orderColour" name="colour" placeholder="e.g. bottle green">
+          </div>
+          <div>
+            <label for="orderOccasion">Occasion</label>
+            <select id="orderOccasion" name="occasion">
+              <option>Everyday</option>
+              <option>Festive</option>
+              <option>Wedding</option>
+              <option>Engagement</option>
+              <option>Party</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="orderDescription">Describe your design *</label>
+        <textarea id="orderDescription" name="description" rows="4" placeholder="Describe your pattern, colours, threadwork and style..." required></textarea>
+
+        <button class="btn btn-dark full-btn" type="submit">Enquire on WhatsApp ↗</button>
+        <small class="form-note">WhatsApp opens so you can review and send your message yourself.</small>
+      </form>
+    </section>
+
+    <section class="contact-strip">
+      <div><span class="eyebrow">LET'S CONNECT</span><h2>Have a design in mind?</h2></div>
+      <a class="btn btn-light" href="https://wa.me/919502750677" target="_blank" rel="noopener noreferrer">Chat on WhatsApp ↗</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand footer-brand" href="#home">
+      <span class="brand-icon">❀</span>
+      <span>Lotus <small>CREATIONS</small></span>
+    </a>
+    <p>Beautiful embroidery. Personalised with love.</p>
+    <div class="footer-links">
+      <a href="#collections">Collections</a>
+      <a href="#more-designs">Inspiration</a>
+      <a href="#about">Our Story</a>
+      <a href="#order">Custom Orders</a>
+    </div>
+    <small>© <span id="year"></span> Lotus Creations. All rights reserved.</small>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/919502750677" target="_blank" rel="noopener noreferrer" aria-label="Contact Lotus Creations on WhatsApp">☏</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
