@@ -1,87 +1,122 @@
 import streamlit as st
 import streamlit.components.v1 as components
 from pathlib import Path
+import re
+from urllib.parse import quote
 
-# Page configuration
 st.set_page_config(
     page_title="Lotus Creations",
     page_icon="🌸",
-    layout="wide",
-    initial_sidebar_state="collapsed"
+    layout="wide"
 )
 
-# Read website files
 BASE_DIR = Path(__file__).parent
 
-html_path = BASE_DIR / "index.html"
-css_path = BASE_DIR / "style.css"
-js_path = BASE_DIR / "script.js"
-
-st.markdown(
-    """
-    <style>
-    header[data-testid="stHeader"] {
-        display: none;
-    }
-
-    footer {
-        display: none;
-    }
-
-    .block-container {
-        padding: 0;
-        max-width: 100%;
-    }
-
-    iframe {
-        border: none;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
+# Update these if your GitHub username/repository/branch differs
+GITHUB_RAW = (
+    "https://raw.githubusercontent.com/"
+    "ShivaniJidugu/LOTUS-CREATIONS-/main/"
 )
 
-# Check that all required files exist
-if not html_path.exists():
-    st.error("index.html file not found in the GitHub repository.")
-elif not css_path.exists():
-    st.error("style.css file not found in the GitHub repository.")
-elif not js_path.exists():
-    st.error("script.js file not found in the GitHub repository.")
+st.markdown("""
+<style>
+header[data-testid="stHeader"] {display:none;}
+footer {display:none;}
+.block-container {padding:0; max-width:100%;}
+</style>
+""", unsafe_allow_html=True)
+
+html_file = BASE_DIR / "index.html"
+css_file = BASE_DIR / "style.css"
+js_file = BASE_DIR / "script.js"
+
+if not html_file.exists():
+    st.error("index.html file not found.")
+elif not css_file.exists():
+    st.error("style.css file not found.")
+elif not js_file.exists():
+    st.error("script.js file not found.")
 else:
-    # Load HTML, CSS and JavaScript
-    html_content = html_path.read_text(encoding="utf-8")
-    css_content = css_path.read_text(encoding="utf-8")
-    js_content = js_path.read_text(encoding="utf-8")
+    html = html_file.read_text(encoding="utf-8")
+    css = css_file.read_text(encoding="utf-8")
+    js = js_file.read_text(encoding="utf-8")
 
-    # Insert CSS and JavaScript into the HTML
-    if "</head>" in html_content.lower():
-        import re
-        html_content = re.sub(
+    # Convert local image paths into GitHub raw URLs.
+    # Supports images/name.jpg and name.jpg.
+    def fix_path(path):
+        path = path.strip()
+
+        if (
+            not path
+            or path.startswith(("http://", "https://", "data:", "#", "//"))
+            or path.startswith(("blob:", "javascript:"))
+        ):
+            return path
+
+        clean = path.split("?")[0].split("#")[0]
+
+        # Avoid changing CSS, JS and HTML file references.
+        if clean.lower().endswith((".css", ".js", ".html")):
+            return path
+
+        # Use the repository path as written in the HTML/CSS.
+        return GITHUB_RAW + quote(clean.lstrip("./"), safe="/")
+
+    # Fix image src attributes in HTML.
+    html = re.sub(
+        r'(\bsrc\s*=\s*["\'])(?!https?://|data:|//)([^"\']+)(["\'])',
+        lambda m: m.group(1) + fix_path(m.group(2)) + m.group(3),
+        html,
+        flags=re.IGNORECASE
+    )
+
+    # Fix local images used in CSS background-image: url(...)
+    css = re.sub(
+        r'url\(\s*(["\']?)(?!https?://|data:|//)([^)"\']+)\1\s*\)',
+        lambda m: "url('" + fix_path(m.group(2)) + "')",
+        css,
+        flags=re.IGNORECASE
+    )
+
+    # Remove original linked CSS/JS tags to avoid loading them twice.
+    html = re.sub(
+        r'<link\b[^>]*href=["\'][^"\']*style\.css[^"\']*["\'][^>]*>',
+        '',
+        html,
+        flags=re.IGNORECASE
+    )
+    html = re.sub(
+        r'<script\b[^>]*src=["\'][^"\']*script\.js[^"\']*["\'][^>]*>\s*</script>',
+        '',
+        html,
+        flags=re.IGNORECASE
+    )
+
+    # Insert CSS and JS into the HTML.
+    if re.search(r"</head>", html, re.IGNORECASE):
+        html = re.sub(
             r"</head>",
-            lambda match: f"<style>{css_content}</style></head>",
-            html_content,
+            lambda m: "<style>" + css + "</style>" + m.group(0),
+            html,
             count=1,
             flags=re.IGNORECASE
         )
     else:
-        html_content = f"<style>{css_content}</style>" + html_content
+        html = "<style>" + css + "</style>" + html
 
-    if "</body>" in html_content.lower():
-        import re
-        html_content = re.sub(
+    if re.search(r"</body>", html, re.IGNORECASE):
+        html = re.sub(
             r"</body>",
-            lambda match: f"<script>{js_content}</script></body>",
-            html_content,
+            lambda m: "<script>" + js + "</script>" + m.group(0),
+            html,
             count=1,
             flags=re.IGNORECASE
         )
     else:
-        html_content += f"<script>{js_content}</script>"
+        html += "<script>" + js + "</script>"
 
-    # Display the website
     components.html(
-        html_content,
-        height=2400,
+        html,
+        height=3200,
         scrolling=True
     )
